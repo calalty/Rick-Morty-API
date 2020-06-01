@@ -3,7 +3,6 @@ const express = require('express')
 const hbs = require('express-handlebars')
 const path = require('path')
 const app = express()
-
 const getRick = require('./lib/rickmorty')
 const getMorty = require('./lib/rickmorty')
 const getSquanchy = require('./lib/rickmorty')
@@ -67,8 +66,7 @@ app.get('/birdperson', async(req, res) => {
     let species = data.results[0].species
     let gender = data.results[0].gender
     let location = data.results[0].location.name
-    let image = data.results[0].image
-    res.render('birdperson', {name, status, species, gender, location, image})
+    res.render('birdperson', {name, status, species, gender, location})
 }) 
 
 app.get('/mrpoopybutthole', async(req, res) => {
